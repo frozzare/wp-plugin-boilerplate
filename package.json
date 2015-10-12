@@ -1,0 +1,12 @@
+{
+  "name": "{plugin-name}",
+  "version": "1.0.0",
+  "repository": "{repo}",
+  "description": "{description}",
+  "author": "{author} <{email}>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "eslint-config-xo-multi-spaces": "^1.0.0"
+  }
+}

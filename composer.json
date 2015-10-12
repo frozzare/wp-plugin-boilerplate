@@ -1,0 +1,34 @@
+{
+  "name": "{plugin-name}",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "{description}",
+  "homepage": "{homepage}",
+  "authors": [
+    {
+      "name": "{author}",
+      "email": "{email}",
+      "homepage": "https://github.com/{username}"
+    }
+  ],
+  "keywords": [
+  ],
+  "support": {
+    "issues": "https://github.com/{repo}/issues"
+  },
+  "require": {
+    "php": ">=5.5.9",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "frozzare/wp-test-suite": "~1.0",
+    "wp-coding-standards/wpcs": "dev-develop",
+    "sebastian/phpcpd": "~2.0@dev"
+  },
+  "scripts": {
+    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs",
+    "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
