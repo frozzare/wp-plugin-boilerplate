@@ -1,3 +1,6 @@
 {
-    "extends": "xo-multi-spaces"
+  "extends": "xo-multi-spaces/esnext",
+  "rules": {
+    "object-shorthand": 0
+  }
 }
