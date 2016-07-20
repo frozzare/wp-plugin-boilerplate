@@ -12,18 +12,16 @@
     }
   ],
   "keywords": [
+    "wordpress",
+    "plugin"
   ],
-  "support": {
-    "issues": "https://github.com/frozzare/wp-plugin-boilerplate/issues"
-  },
   "require": {
     "php": ">=5.5.9",
     "composer/installers": "~1.0"
   },
   "require-dev": {
     "frozzare/wp-test-suite": "~1.0",
-    "wp-coding-standards/wpcs": "dev-develop",
-    "sebastian/phpcpd": "~2.0@dev"
+    "wp-coding-standards/wpcs": "dev-develop"
   },
   "scripts": {
     "post-install-cmd": "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi",
