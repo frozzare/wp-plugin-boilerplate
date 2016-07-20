@@ -2,10 +2,8 @@ language: php
 
 sudo: false
 
-before_install:
-  - composer self-update
-
 install:
+  - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
 
 before_script:
@@ -18,23 +16,27 @@ after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
   - bash <(curl -s https://codecov.io/bash)
 
+cache:
+  directories:
+  - $HOME/.composer/cache
+
 matrix:
   include:
+    - php: 5.5.9
+      env: WP_VERSION=4.0 WP_MULTISITE=0
     - php: 5.5
-      env: WP_VERSION=latest WP_MULTISITE=0
+      env: WP_VERSION=4.0 WP_MULTISITE=0
     - php: 5.6
-      env: WP_VERSION=latest WP_MULTISITE=1
-    - php: hhvm
       env: WP_VERSION=latest WP_MULTISITE=1
     - php: 7.0
       env: WP_VERSION=latest WP_MULTISITE=0
-    - php: 5.5
-      env: WP_VERSION=nightly WP_MULTISITE=0
     - php: 7.0
       env: WP_VERSION=nightly WP_MULTISITE=0
   allow_failures:
-    - php: 5.5
-      env: WP_VERSION=nightly WP_MULTISITE=0
     - php: 7.0
       env: WP_VERSION=nightly WP_MULTISITE=0
   fast_finish: true
+
+branches:
+  only:
+    - master
