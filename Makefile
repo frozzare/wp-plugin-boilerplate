@@ -1,3 +1,7 @@
+# Eslint config
+ESLINT_SOURCE := assets/js/scripts.js
+
+# Pot config
 POT_NAME := plugin-name
 POT_FILE := languages/plugin-name.pot
 POT_SOURCE := $(shell find src -name '*.php' -type f)
@@ -7,7 +11,7 @@ lint:
 	make lint:php
 
 lint\:js:
-	node_modules/.bin/eslint assets/js/scripts.js
+	node_modules/.bin/eslint $(ESLINT_SOURCE)
 
 lint\:php:
 	vendor/bin/phpcs -s --extensions=php --standard=phpcs.xml src/
