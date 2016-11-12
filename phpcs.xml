@@ -8,7 +8,6 @@
   <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
   <rule ref="WordPress-Core">
-  <rule ref="WordPress-Core">
     <exclude name="PEAR.Functions.FunctionCallSignature.EmptyLine" />
     <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
